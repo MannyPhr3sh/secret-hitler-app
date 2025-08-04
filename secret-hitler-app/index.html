@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secret Hitler Role Assigner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Secret Hitler</h1>
+
+    <div id="create-join">
+      <button onclick="showCreate()">Create Game</button>
+      <button onclick="showJoin()">Join Game</button>
+    </div>
+
+    <div id="create-section" class="hidden">
+      <input type="text" id="host-name" placeholder="Your name (Host)">
+      <button onclick="createGame()">Create</button>
+      <p id="game-code-display"></p>
+    </div>
+
+    <div id="join-section" class="hidden">
+      <input type="text" id="player-name" placeholder="Your name">
+      <input type="text" id="join-code" placeholder="Game code">
+      <button onclick="joinGame()">Join</button>
+    </div>
+
+    <div id="lobby-section" class="hidden">
+      <h2>Lobby (<span id="lobby-code"></span>)</h2>
+      <p id="player-list"></p>
+      <button id="start-button" onclick="startGame()">Start Game</button>
+    </div>
+
+    <div id="role-section" class="hidden">
+      <h2>Your Role</h2>
+      <p id="your-role"></p>
+      <p id="role-info"></p>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-database.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
